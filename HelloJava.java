@@ -4,7 +4,7 @@ public class HelloJava {
         for(int i=1;i<cant;i++)
             {
                 
-                for(int j=0;j<i;j++){
+                for(int j=cant;j>i;j--){
                     System.out.print("*");
                 }
 
