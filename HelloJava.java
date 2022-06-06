@@ -1,25 +1,35 @@
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+
 public class HelloJava {
     public static void main(String[] args) {
-    boolean eli = ConsultaPares(50);  
-    System.out.println(eli);
-        int cant = 50;
-        for(int i=1;i<cant;i++)
-            {
-                
-                for(int j=cant;j>i;j--){
-                    System.out.print("*");
+    int randomNum = ThreadLocalRandom.current().nextInt(1, 10);
+    System.out.println(randomNum);    
+    boolean eli = ConsultaPares(randomNum);  
+        if (eli==true){
+            for(int i=1;i<=randomNum;i++)
+                {                 
+                    for(int j=randomNum;j>=i;j--){
+                        System.out.print("*");
+                    }
+                    System.out.println("");
                 }
+        }
+        else {
+            for(int i=1;i<=randomNum;i++)
+                {
+                    
+                    for(int j=0;j<i;j++){
+                        System.out.print("*");
+                    }
 
-                System.out.println("");
-            }
-
+                    System.out.println("");
+                }
+        }
     }
 
     public static boolean ConsultaPares(int numero) {
-        if (numero%2 ==0){
-            return true;
-        }
-        return false;  
+        return numero%2 ==0;  
     }
 
 
